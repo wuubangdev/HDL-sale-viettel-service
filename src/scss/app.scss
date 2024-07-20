@@ -1,0 +1,152 @@
+.app {
+    .banner-cost {
+        padding: 10px 20px;
+        color: white;
+        font-weight: 600;
+        border: none;
+        border-top-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+
+    .featurs-item {
+        padding: 0 10px;
+        transition: 0.5s;
+        overflow: hidden;
+
+        .featurs-icon {
+            border-radius: 10px;
+
+            .feature-img {
+                display: block;
+                height: 100%;
+                border-radius: 10px;
+                transition: 0.5s;
+            }
+
+        }
+
+        .featurs-content {
+            .brand {
+                background-color: #dc3545;
+                border-radius: 5px;
+                padding: 2px 5px;
+                font-size: 12px;
+                font-weight: 600;
+            }
+        }
+
+        &:hover {
+            box-shadow: 0 0 55px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+
+            .feature-img {
+                height: 110%;
+            }
+
+            .featurs-content {
+                p {
+                    color: #dc3545 !important;
+                }
+
+                .brand {
+                    opacity: 0.7;
+                }
+            }
+
+        }
+
+    }
+
+    .container-fluid {
+        display: flex;
+        justify-content: center;
+
+        .hotline {
+            padding: 10px 15px;
+            background-color: #dc3545;
+            color: white;
+            border-radius: 10px;
+
+            h5 {
+                color: white;
+                margin: 0;
+            }
+
+            &:hover {
+                opacity: 0.7;
+                cursor: pointer;
+            }
+        }
+
+        .tab-content {
+            .card-info {
+                cursor: pointer;
+
+                .card-header {
+                    background-color: #dc3545;
+
+                    .card-header-heading {
+                        font-weight: 600;
+                        font-size: medium;
+
+                        .card-header-heading-p {
+                            margin: 0;
+                            color: white;
+                        }
+                    }
+                }
+
+                .ant-list-header {
+
+                    .cost-start {
+                        color: #EE0033;
+                        transition: 0.5s;
+                    }
+
+                    .cost-end {
+                        color: #000;
+                        transition: 0.5s;
+                    }
+                }
+
+                .list-item {
+                    &:hover {
+                        font-weight: 700;
+                    }
+                }
+
+                &:hover {
+                    .ant-list-header {
+                        .cost-end {
+                            color: #EE0033;
+                        }
+
+                        .cost-start {
+                            color: #000;
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+
+
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
