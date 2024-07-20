@@ -3,8 +3,10 @@ import Banner from "./component/banner";
 import Header from "./component/header";
 import Feature from "./component/features.section";
 import { PhoneOutlined } from "@ant-design/icons";
-import BreakPart from "./component/break.sgv";
-import ListProduct from "./component/product.list";
+import ListProductSigleWifi from "./component/product.list.single.wifi";
+import ListProductWifi360 from "./component/product.list.wifi.tv360";
+import ListProductBox360 from "./component/product.list.wifi.box360";
+import ListProductWifiCompany from "./component/product.list.wifi.company";
 
 function App() {
   return (
@@ -33,12 +35,14 @@ function App() {
         {/* Featurs Section End */}
         <div className="container-fluid testimonial noselect">
           <div className="hotline">
-
-            <h5><PhoneOutlined /> Hotline: 0965788852</h5>
+            <h5><PhoneOutlined /> <a href="tel:0965788852" className="text-white">Hotline: 0965788852</a></h5>
           </div>
         </div>
         {/* Fruits Shop Start*/}
-        <ListProduct />
+        <ListProductSigleWifi />
+        <ListProductWifi360 />
+        <ListProductBox360 />
+        <ListProductWifiCompany />
         {/* Fruits Shop End*/}
         {/* Featurs Start */}
         <div className="container-fluid service py-5">

@@ -13,31 +13,31 @@ interface IFeature {
 }
 const defaultData: IFeature[] = [
     {
-        link: "#",
+        link: "#list-1",
         img: wifi,
         title: "Gói cước Internet Wifi đơn lẻ",
         brand: "HOT"
     },
     {
-        link: "#",
+        link: "#list-2",
         img: tivi360,
         title: "Gói cước Internet Wifi + APP TV360",
         brand: "HOT"
     },
     {
-        link: "#",
+        link: "#list-3",
         img: box360,
         title: "Gói cước Internet Wifi + BOX TV360",
         brand: "HOT"
     },
     {
-        link: "#",
+        link: "#list-4",
         img: wificom,
         title: "Gói cước Internet Doanh nghiệp",
         brand: "NEW"
     },
     {
-        link: "#",
+        link: "#list-5",
         img: camera,
         title: "Các sản phẩm Camera giám sát",
         brand: "NEW"
@@ -51,11 +51,10 @@ const Feature = () => {
             <div className="container-fluid featurs">
                 <div className="container py-4">
                     <div className="row g-4 justify-content-evenly">
-
                         {features && features.length > 0 && features.map((feature, index) => {
                             return (
                                 <div key={`feature ${index}`} className="col-md-6 col-lg-2">
-                                    <a href={"#"}>
+                                    <a href={feature.link}>
                                         <div className="featurs-item text-center rounded bg-light pb-4">
                                             <div className="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
                                                 <img className="feature-img" src={feature.img} />

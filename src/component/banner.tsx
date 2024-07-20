@@ -8,7 +8,7 @@ const contentStyle: React.CSSProperties = {
 const Banner = () => {
     return (
         <>
-            <div className="container-fluid py-3 mb-3 hero-header">
+            <div className="container-fluid py-5 mb-3 hero-header">
                 <div className="container pb-3">
                     <div className="row g-5 align-items-center">
                         <div className="col-md-12 col-lg-7 text-center">

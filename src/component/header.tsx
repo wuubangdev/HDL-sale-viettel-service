@@ -17,8 +17,8 @@ const Header = () => {
             {/* Navbar start */}
             <div className={shadow ? "container-fluid fixed-top shadow" : "container-fluid fixed-top"}>
                 <div className="container px-0">
-                    <nav className="navbar navbar-light bg-white navbar-expand-xl">
-                        <a href="index.html" className="navbar-brand">
+                    <nav className="navbar navbar-light navbar-expand-xl">
+                        <a href="#" className="navbar-brand">
                             <img src={logo} alt="" style={{ maxHeight: 66 }} />
                         </a>
                     </nav>
