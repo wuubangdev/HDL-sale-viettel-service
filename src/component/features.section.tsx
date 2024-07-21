@@ -3,7 +3,6 @@ import wificom from "../assets/img/feature/wifidoanhnghiep.jpg"
 import tivi360 from "../assets/img/feature/tv360.jpg"
 import box360 from "../assets/img/feature/boxtv360.jpg"
 import camera from "../assets/img/feature/camera.png"
-import { useState } from "react";
 
 interface IFeature {
     link: string;
@@ -44,14 +43,13 @@ const defaultData: IFeature[] = [
     },
 ]
 const Feature = () => {
-    const [features, setFeature] = useState<IFeature[]>(defaultData);
 
     return (
         <>
             <div className="container-fluid featurs">
                 <div className="container py-4">
                     <div className="row g-4 justify-content-evenly">
-                        {features && features.length > 0 && features.map((feature, index) => {
+                        {defaultData && defaultData.length > 0 && defaultData.map((feature, index) => {
                             return (
                                 <div key={`feature ${index}`} className="col-md-6 col-lg-2">
                                     <a href={feature.link}>

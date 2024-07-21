@@ -1,8 +1,8 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import CardInfo from "./card.info";
 import { DownloadOutlined, GiftOutlined, PushpinOutlined, WifiOutlined } from "@ant-design/icons";
 
-const listData = [
+const listService = [
     {
         heading: "F90BASIC",
         firstCost: "6",
@@ -189,8 +189,9 @@ const listData = [
     },
 ]
 
-const ListProductWifiCompany = () => {
-    const [listService, setListService] = useState(listData);
+const ListProductWifiCompany = (props: any) => {
+    const { showModal } = props;
+
     return (
         <>
             <div id="list-4" className="container-fluid fruite pt-3 pb-5">
@@ -215,6 +216,7 @@ const ListProductWifiCompany = () => {
                                                 return (
                                                     <Fragment key={index}>
                                                         <CardInfo
+                                                            showModal={showModal}
                                                             heading={service.heading}
                                                             firstCost={service.firstCost}
                                                             endCost={service.endCost}

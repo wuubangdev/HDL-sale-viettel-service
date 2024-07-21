@@ -5,7 +5,8 @@ import CardCameraInfo from "./card.camera.info";
 import { Fragment } from "react/jsx-runtime";
 import CardInfo from "./card.info";
 
-const CameraService = () => {
+const CameraService = (props: any) => {
+    const { showModal } = props;
     const defaultData = [
         {
             title: "CAMERA NGOÀI TRỜI CỐ ĐỊNH",
@@ -124,6 +125,7 @@ const CameraService = () => {
                                     img={item.img}
                                     price={item.price}
                                     listDesc={item.listDesc}
+                                    showModal={showModal}
                                 />
                             )
                         })}

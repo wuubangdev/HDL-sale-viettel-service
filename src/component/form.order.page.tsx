@@ -2,10 +2,10 @@ import type { FormProps } from 'antd';
 import { Button, Form, Input, notification, Select, Spin } from 'antd';
 import { useState } from 'react';
 type FieldType = {
-    name?: string;
-    phone?: string;
-    address?: string;
-    service?: string;
+    fullName?: string;
+    telephone?: string;
+    addressSet?: string;
+    chooseService?: string;
 };
 const services = [
     "HOME",
@@ -40,8 +40,7 @@ const services = [
     "CAMERA NGOÀI TRỜI",
     "CAMERA TRONG NHÀ",
 ]
-const FormOrder = (props: any) => {
-    const { handleOk, keyForm } = props;
+const FormOrderPage = () => {
     const [loading, setLoading] = useState<boolean>(false);
     const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
         let url = 'https://api.sheety.co/a66b3e43b3f4c72c1222c823ed109efd/register/sheet1';
@@ -49,10 +48,10 @@ const FormOrder = (props: any) => {
         let body = {
             sheet1: {
                 date: date.toISOString(),
-                name: values.name,
-                phone: values.phone,
-                address: values.address,
-                choose: values.service
+                name: values.fullName,
+                phone: values.telephone,
+                address: values.addressSet,
+                choose: values.chooseService
             }
         }
         fetch(url,
@@ -81,8 +80,8 @@ const FormOrder = (props: any) => {
                     description: `Có lỗi xảy ra bạn chưa đăng ký dịch vụ thành công, vui lòng thử lại dùm Luân sau nha!`,
                 })
                 setLoading(false);
-            });
-        handleOk();
+            })
+            ;
     };
     return (
         <>
@@ -93,12 +92,12 @@ const FormOrder = (props: any) => {
                         <h5 className="text-success">Vui lòng điền thông tin của bạn vào bên dưới để đăng ký lắp đặt nhé!</h5>
                     </div>
                     <div className='row justify-content-center' >
-                        <div className='col-md-12 col-lg-12'>
+                        <div className='col-md-6 col-lg-6'>
                             <Spin spinning={loading}>
                                 <Form
-                                    key={keyForm ? keyForm : "form-default"}
+                                    key={"form-page"}
                                     size='large'
-                                    name={keyForm ? keyForm : "form-default"}
+                                    name="form-page"
                                     layout='vertical'
                                     onFinish={onFinish}
                                     initialValues={{
@@ -107,7 +106,7 @@ const FormOrder = (props: any) => {
                                 >
                                     <Form.Item<FieldType>
                                         label={<span style={{ fontSize: 16 }}>Họ và tên</span>}
-                                        name="name"
+                                        name="fullName"
                                         rules={[{ required: true, message: 'Luận vẫn chưa biết bạn là ai nè!' }]}
                                     >
                                         <Input />
@@ -115,21 +114,21 @@ const FormOrder = (props: any) => {
 
                                     <Form.Item<FieldType>
                                         label={<span style={{ fontSize: 16 }}>Số điện thoại</span>}
-                                        name="phone"
-                                        rules={[{ required: true, message: 'Thêm số điện thoại để Luận có thể gọi bạn nhé!' }]}
+                                        name="telephone"
+                                        rules={[{ required: true, message: 'Thêm số điện thoại để Luận liên hệ với bạn nhé!' }]}
                                     >
                                         <Input />
                                     </Form.Item>
                                     <Form.Item<FieldType>
                                         label={<span style={{ fontSize: 16 }}>Địa chỉ lắp đặt</span>}
-                                        name="address"
-                                        rules={[{ required: true, message: 'Bạn quên chọn địa chỉ để Luận đến lắp đặt rồi nè!' }]}
+                                        name="addressSet"
+                                        rules={[{ required: true, message: 'Cho Luận biết chố lắp đặt nhé!' }]}
                                     >
                                         <Input />
                                     </Form.Item>
                                     <Form.Item
                                         label={<span style={{ fontSize: 16 }}>Chọn gói cước</span>}
-                                        name="service"
+                                        name="chooseService"
                                         rules={[{ required: true, message: 'Bạn hãy chọn gói để Luận lắp đặt cho bạn nhé!' }]}
                                     >
                                         <Select>
@@ -160,4 +159,4 @@ const FormOrder = (props: any) => {
         </>
     )
 }
-export default FormOrder;
+export default FormOrderPage;

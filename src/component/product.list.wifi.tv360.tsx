@@ -1,8 +1,8 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import CardInfo from "./card.info";
 import { DownloadOutlined, GiftOutlined, PushpinOutlined, WifiOutlined } from "@ant-design/icons";
 
-const listData = [
+const listService = [
     {
         heading: "HOME",
         subHeading: "+ BOX TV360",
@@ -173,8 +173,9 @@ const listData = [
     },
 ]
 
-const ListProductWifi360 = () => {
-    const [listService, setListService] = useState(listData);
+const ListProductWifi360 = (props: any) => {
+    const { showModal } = props;
+
     return (
         <>
             <div id="list-2" className="container-fluid fruite pb-5 pt-3">
@@ -199,6 +200,7 @@ const ListProductWifi360 = () => {
                                                 return (
                                                     <Fragment key={index}>
                                                         <CardInfo
+                                                            showModal={showModal}
                                                             heading={service.heading}
                                                             subHeading={service.subHeading}
                                                             firstCost={service.firstCost}

@@ -10,8 +10,25 @@ import ListProductWifiCompany from "./component/product.list.wifi.company";
 import CameraService from "./component/camera.service";
 import FormOrder from "./component/form.order";
 import OtherService from "./component/other.service";
+import FloatButtonModel from "./component/float.button";
+import { Modal } from "antd";
+import { useState } from "react";
+import FormOrderPage from "./component/form.order.page";
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
   return (
     <>
       <div className="app">
@@ -42,16 +59,26 @@ function App() {
           </div>
         </div>
         {/* List Service Start*/}
-        <ListProductSigleWifi />
-        <ListProductWifi360 />
-        <ListProductBox360 />
-        <ListProductWifiCompany />
+        <ListProductSigleWifi
+          showModal={showModal}
+        />
+        <ListProductWifi360
+          showModal={showModal}
+        />
+        <ListProductBox360
+          showModal={showModal}
+        />
+        <ListProductWifiCompany
+          showModal={showModal}
+        />
         {/* List Service End*/}
         {/* Camera Service Start */}
-        <CameraService />
+        <CameraService
+          showModal={showModal}
+        />
         {/* Camera Service End */}
         {/* From order start*/}
-        <FormOrder />
+        <FormOrderPage />
         {/* From order End */}
         {/* Other Service Start */}
         <OtherService />
@@ -71,8 +98,22 @@ function App() {
         </div>
         {/* Copyright End */}
       </div>
-
-
+      <FloatButtonModel
+        showModal={showModal}
+      />
+      <Modal
+        maskClosable={false}
+        title="Đăng ký dịch vụ"
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        footer={""}
+      >
+        <FormOrder
+          key={"form-n"}
+          handleOk={handleOk}
+        />
+      </Modal>
     </>
   )
 }

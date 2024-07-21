@@ -12,10 +12,11 @@ interface IProps {
     timeCost?: boolean;
     hideFooter?: boolean;
     dataList: IListItem[];
+    showModal?: any
 }
 
 const CardInfo = (props: IProps) => {
-    const { heading, firstCost, endCost, dataList, subHeading, timeCost, hideFooter } = props;
+    const { heading, firstCost, endCost, dataList, subHeading, timeCost, hideFooter, showModal } = props;
     return (
         <>
             <div className="col-md-6 col-lg-4 col-xl-3 card-info py-1">
@@ -45,7 +46,7 @@ const CardInfo = (props: IProps) => {
                             footer={
                                 <div className="d-flex justify-content-center flex-lg-wrap">
                                     {!hideFooter ?
-                                        <button className="btn btn-primary border rounded-pill px-3">
+                                        <button className="btn btn-primary border rounded-pill px-3" onClick={() => showModal()}>
                                             Đăng ký
                                         </button>
                                         : ""
