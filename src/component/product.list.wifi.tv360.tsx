@@ -177,13 +177,13 @@ const ListProductWifi360 = () => {
     const [listService, setListService] = useState(listData);
     return (
         <>
-            <div id="list-2" className="container-fluid fruite pt-5">
+            <div id="list-2" className="container-fluid fruite pb-5 pt-3">
                 <div className="container">
                     <div className="tab-class text-center">
                         <div className="row g-4">
                             <div className="text-start">
                                 <h5>Danh sách các gói cước combo: Internet Wifi + APP TV360</h5>
-                                <p style={{ borderLeft: "2px solid #EE0033", padding: "0px 15px", color: "#000", fontStyle: "italic" }}>
+                                <p style={{ borderLeft: "2px solid #EE0033", padding: "0px 15px", color: "#000", fontStyle: "italic", textAlign: "justify" }}>
                                     Đây là các gói cước Combo dành cho khách hàng vừa có nhu cầu sử dụng internet wifi vừa có nhu cầu xem truyền hình trên SmartTV.
                                     Hãy liên hệ đến hotline:
                                     <a href="tel:0965788852" style={{ color: "#EE0033", fontWeight: 600, }}> 0965788852</a>
@@ -194,7 +194,7 @@ const ListProductWifi360 = () => {
                             <div className="tab-pane fade show p-0 active">
                                 <div className="row g-4">
                                     <div className="col-lg-12">
-                                        <div className="row g-4">
+                                        <div className="row g-4 justify-content-center">
                                             {listService && listService.length > 0 && listService.map((service, index) => {
                                                 return (
                                                     <Fragment key={index}>

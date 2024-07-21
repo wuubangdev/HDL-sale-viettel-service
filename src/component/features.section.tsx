@@ -60,7 +60,7 @@ const Feature = () => {
                                                 <img className="feature-img" src={feature.img} />
                                             </div>
                                             <div className="featurs-content text-center">
-                                                <p className="mb-0 text-secondary"><b>{feature.title}</b></p>
+                                                <p className="mb-0 text-secondary">{feature.title}</p>
                                                 <span className="brand text-white">{feature.brand}</span>
                                             </div>
                                         </div>

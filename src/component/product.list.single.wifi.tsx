@@ -170,14 +170,17 @@ const ListProductSigleWifi = () => {
     const [listService, setListService] = useState(listData);
     return (
         <>
-            <div className="container-fluid fruite mt-5">
-                <div className="container">
+            <div className="container-fluid fruite pb-5 pt-3 background-single-wifi">
+                <div
+                    className="container"
+                // style={{ borderRadius: 10, backgroundColor: "white" }}
+                >
                     <div className="tab-class text-center">
                         <div className="row g-4">
-                            <div className="text-start">
-                                <h5 id="list-1" >Danh sách các gói cước Internet Wifi đơn lẻ</h5>
-                                <p style={{ borderLeft: "2px solid #EE0033", padding: "0px 15px", color: "#000", fontStyle: "italic" }}>Đây là các gói cước Internet Wifi đơn lẻ dành cho khách hàng là cá nhân, hộ gia đình và quán cafe nhỏ.
-
+                            <div className="text-start pt-3">
+                                <h5 id="list-1" style={{ textAlign: "justify" }}>Danh sách các gói cước Internet Wifi đơn lẻ</h5>
+                                <p style={{ borderLeft: "2px solid #EE0033", padding: "0px 15px", color: "#000", fontStyle: "italic", textAlign: "justify" }}>
+                                    Đây là các gói cước Internet Wifi đơn lẻ dành cho khách hàng là cá nhân, hộ gia đình và quán cafe nhỏ.
                                     Hãy liên hệ đến hotline:
                                     <a href="tel:0965788852" style={{ color: "#EE0033", fontWeight: 600, }}> 0965788852</a>
                                     &nbsp;để được tư vấn chi tiết hơn.</p>
@@ -187,7 +190,7 @@ const ListProductSigleWifi = () => {
                             <div className="tab-pane fade show p-0 active">
                                 <div className="row g-4">
                                     <div className="col-lg-12">
-                                        <div className="row g-4">
+                                        <div className="row g-4 justify-content-center">
                                             {listService && listService.length > 0 && listService.map((service, index) => {
                                                 return (
                                                     <Fragment key={index}>

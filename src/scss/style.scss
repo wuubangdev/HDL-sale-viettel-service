@@ -180,7 +180,7 @@
 
 /*** Hero Header ***/
 .hero-header {
-    background: linear-gradient(rgba(248, 223, 173, 0.1), rgba(248, 223, 173, 0.1)), url(../img/hero-img.jpg);
+    background: linear-gradient(rgba(241, 99, 89, 0.1), rgba(243, 31, 24, 0.1));
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -272,11 +272,13 @@
 /*** service Start ***/
 .service .service-item .service-content {
     position: relative;
-    width: 250px;
     height: 130px;
     top: -50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    padding: 15px;
 }
 
 /*** service End ***/

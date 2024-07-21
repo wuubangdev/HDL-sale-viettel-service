@@ -26,6 +26,10 @@
         }
 
         .featurs-content {
+            p {
+                transition: 0.1s;
+            }
+
             .brand {
                 background-color: #dc3545;
                 border-radius: 5px;
@@ -132,7 +136,43 @@
         }
     }
 
+    .background-other-service {
+        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../assets/img/backgroud/back1.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
+    .background-single-wifi {
+        background-color: rgba(233, 153, 153, 0.3);
+    }
+
+    .background-box-tv {
+        background-color: rgba(233, 153, 153, 0.3);
+    }
+
+    .background-camera {
+        background-color: rgba(236, 211, 163, 0.3);
+    }
+
+}
+
+.enable-hover {
+    color: #000;
+
+    &:hover {
+        b {
+            color: rgb(48, 13, 243);
+        }
+
+        span {
+            color: rgb(48, 13, 243);
+        }
+
+        a {
+            font-weight: 600;
+            cursor: pointer;
+        }
+    }
 }
 
 .noselect {

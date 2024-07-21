@@ -9,11 +9,13 @@ interface IProps {
     subHeading?: string;
     firstCost: string;
     endCost: string;
+    timeCost?: boolean;
+    hideFooter?: boolean;
     dataList: IListItem[];
 }
 
 const CardInfo = (props: IProps) => {
-    const { heading, firstCost, endCost, dataList, subHeading } = props;
+    const { heading, firstCost, endCost, dataList, subHeading, timeCost, hideFooter } = props;
     return (
         <>
             <div className="col-md-6 col-lg-4 col-xl-3 card-info py-1">
@@ -25,7 +27,7 @@ const CardInfo = (props: IProps) => {
                         </div>
                     </div>
                     {/* <div className="text-white bg-secondary px-3 py-1 rounded position-absolute" style={{ top: 10, left: 10 }}>Hot</div> */}
-                    <div className="p-4 border border-primary border-top-0 rounded-bottom">
+                    <div className="p-4 border border-primary border-top-0 rounded-bottom bg-light">
                         <List
                             dataSource={dataList}
                             renderItem={(item) => (
@@ -36,21 +38,25 @@ const CardInfo = (props: IProps) => {
                             header={
                                 <div>
                                     <h1><span className="cost-start">{firstCost}</span><span className="cost-end">{endCost}</span></h1>
-                                    <p>/tháng</p>
+                                    {!timeCost ? <p>/tháng</p> : <p>/tháng/cam</p>}
+
                                 </div>
                             }
                             footer={
                                 <div className="d-flex justify-content-center flex-lg-wrap">
-                                    <button className="btn btn-primary border rounded-pill px-3">
-                                        Đăng ký
-                                    </button>
+                                    {!hideFooter ?
+                                        <button className="btn btn-primary border rounded-pill px-3">
+                                            Đăng ký
+                                        </button>
+                                        : ""
+                                    }
                                 </div>
                             }
                         />
 
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }
